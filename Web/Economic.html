@@ -1,59 +1,67 @@
 <!DOCTYPE html>
-<html lang = "en">
-<head>
-<title>Page Title</title>
-</head>
-<body>
-<link rel="stylesheet" href="Political.css">
+	<html lang = "en">
+	<head>
+		<title>Page Title</title>
+	</head>
 
-<h1 style="color: white;"><center>Political Philosophy</center></h1>
+	<body>
+	<link rel="stylesheet" href="Economic.css">
 
-<form action="/html/tags/html_form_tag_action.cfm" method="post" >
-Opinion: <p></p>
-<textarea name="comments" id="comments" style="width:50%;height:100px;padding:2%;font-size:1.2em;border:12px ridge #6DB72C;">
-</textarea><br>
-<input type="submit" value="Post">
-</form>
+	<h1 style="color: white;"><center>Political Philosophy</center></h1>
+
+	<form action="/html/tags/html_form_tag_action.cfm" method="post" >
+	Opinion: <p></p>
+	<textarea name="comments" id="comments" style="width:50%;height:100px;padding:2%;font-size:1.2em;border:12px ridge #6DB72C;">
+	</textarea><br>
+	<input type="submit" value="Post">
+	</form>
+	<div class = "dumb">
+		<p>Comments:
+			<div id="outputtext0">_________________</div>
+			<hr>
+			<div id="outputtext1">_________________</div>
+			<hr>
+			<div id="outputtext2">_________________</div>
+			<hr>
+			<div id="outputtext3">_________________</div>
+			<hr>
+			<div id="outputtext4">_________________</div>
+			<hr>
+			<div id="outputtext5">_________________</div>
+			<hr>
+			<div id="outputtext6">_________________</div>
+			<hr>
+			<div id="outputtext7">_________________</div>
+			<hr>
+			<div id="outputtext8">_________________</div>
+			<hr>
+			<div id="outputtext9">_________________</div>
+			<hr>
+			<textarea rows="4" cols="40" name="comment" form="usrform" id="estercommentbox">test</textarea>
+			<button onclick="myFunction()">Submit</button>
+			<script>
+				function myFunction() {
+				  	var commentBox = document.getElementById("estercommentbox");
+				  	if (commentBox.value != "") {
+						for (let i = 0; i < 9; i++) {
+							// each line gets the stuff on the previous line, creating the illusion that the cmments are moving up
+							var currLine = document.getElementById("outputtext"+i);
+							let iNext = i + 1;
+							var prevLine = document.getElementById("outputtext"+iNext);
+							currLine.innerHTML = prevLine.innerHTML
+						}
+					  	var lastLine = document.getElementById("outputtext9");
+						lastLine.innerHTML = commentBox.value;
+					}
+					commentBox.value = "";
+				}
+			</script>
+		</p>
+	</div>
 
 
-<head> 
-    <meta charset="UTF-8" />
-    <title>Ester's Project</title>
-</head>
-<body>
-	<p>Comments:</div>
-	<div id="outputtext0">_________________</div>
-	<div id="outputtext1">_________________</div>
-	<div id="outputtext2">_________________</div>
-	<div id="outputtext3">_________________</div>
-	<div id="outputtext4">_________________</div>
-	<div id="outputtext5">_________________</div>
-	<div id="outputtext6">_________________</div>
-	<div id="outputtext7">_________________</div>
-	<div id="outputtext8">_________________</div>
-	<div id="outputtext9">_________________</div>
-	<textarea rows="4" cols="40" name="comment" form="usrform" id="estercommentbox">test</textarea>
-	<button onclick="myFunction()">Submit</button>
-	<script>
-		function myFunction() {
-		  	var commentBox = document.getElementById("estercommentbox");
-			for (let i = 0; i < 9; i++) {
-				// each line gets the stuff on the previous line, creating the illusion that the cmments are moving up
-				var currLine = document.getElementById("outputtext"+i);
-				let iNext = i + 1;
-				var prevLine = document.getElementById("outputtext"+iNext);
-				currLine.innerHTML = prevLine.innerHTML
-			}
-		  	var lastLine = document.getElementById("outputtext9");
-			lastLine.innerHTML = commentBox.value;
-			commentBox.value = "";
-		}
-	</script>
+
+	</body>
 
 
-
-
-</body>
-
-
-</html>
+	</html>
