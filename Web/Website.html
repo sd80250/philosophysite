@@ -2,8 +2,11 @@
 <html>
   <head>
     <title>Philosophy Page</title>
+    <style id="style">p.indent {padding-left: 1.8em;}</style>
     <script>
-      function writeText(txt) {
+      function writeText(padding, date, txt) {
+        document.getElementById("style").innerHTML = "p.indent {padding-left: " + padding + "em;}";
+        document.getElementById("date").innerHTML = date;
         document.getElementById("desc").innerHTML = txt;
       } 
     </script>
@@ -15,7 +18,7 @@
     <p>
       <div class = "menu"><center>
         <a class ="Home" href = "Website.html">Home</a>
-        <a href="Political.html">Political</a>
+        <a href="Post.php">Political</a>
         <a href="Economic.html">Economic</a>
         <a href="Social.html">Social</a>
         <a href="Life.html">Life</a>
@@ -26,16 +29,19 @@
     <center><img src="Circle.png" usemap="#image-map"></center>
 
     <map name="image-map">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('Karl Marx was born')" coords="96,30,21" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('Your uglee')" coords="180,30,20" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('ge')" coords="275,31,21" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('')" coords="338,29,21" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('')" coords="485,28,19" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('')" coords="545,29,22" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('')" coords="620,29,21" shape="circle">
-      <area target="_blank" alt="" title="" href="" onmouseover = "writeText('');" coords="695,29,22" shape="circle">
+      <area target="_blank" alt="" style = "color: blue;" title="" href="Socrates.html" onmouseover = "writeText(12.5, '500BC: Greek', 'Socrates was a classical Greek (Athenian) philosopher credited as one of the founders of Western philosophy, and as being the first moral philosopher,of the Western ethical tradition of thought. An enigmatic figure, he made no writings, and is known chiefly through the accounts of classical writers writing after his lifetime, particularly his students Plato and Xenophon. Other sources include the contemporaneous Antisthenes, Aristippus, and Aeschines of Sphettos. Aristophanes, a playwright, is the only source to have written during his lifetime.<br><br>Plato\'s dialogues are among the most comprehensive accounts of Socrates to survive from antiquity, though it is unclear the degree to which Socrates himself is \'hidden behind his \'best disciple\'\'. Through his portrayal in Plato\'s dialogues, Socrates has become renowned for his contribution to the fields of ethics and epistemology. It is this Platonic Socrates who lends his name to the concepts of Socratic irony and the Socratic method, or elenchus.<br> Socrates exerted a strong influence on philosophers in later antiquity and in the modern era. Depictions of Socrates in art, literature and popular culture have made him one of the most widely known figures in the Western philosophical tradition.')" coords="96,30,21" shape="circle">
+
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(16.5, '65 AD: Roman', 'Many Romans were Stoics: people who believed that strength can be gained through the endurance of hardship and suffering. <br><br>Seneca the Younger was a famous philosopher during the reign of the Roman Empire. He was educated in Rome, he became a wealthy and high ranking financial clerk as well as a Roman Senator. However, he was later exiled and years later executed due to a conspiracy that he planned to murder Emperor Nero. Throughout his life, Seneca strongly believed Stoicism.  He was inspired by many Stoics, and he was also an inspiration to people like Pascal and Nathaniel Bacon.')" coords="180,30,20" shape="circle">
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(21.5, '400-1200 AD: Medieval', 'Europeans at the time of the Medieval Era demonstrated the huge spread of Christianity by the rise of The Byzantine Empire. Many believed God as a Supreme being, and that participation in the Roman Catholic church would allow an individual to reach God. ')" coords="275,31,21" shape="circle">
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(24.5, '1300-1700 AD: Renaissance/Englightenment', 'The Renaissance created the use of logic and reasoning. It included both the Englightenment and the Scientific Revolution. In this Era, many more people began to doubt the powers of the government and the power of God as the determinator of their reasoning. Notable figures include Leonardo Da Vinci, John Locke, and Voltaire.')" coords="338,29,21" shape="circle">
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(31.7, '1750 AD: Free Economics', 'Laissez faire was developed in the mid 1700s by Adam Smith, an economist who argued for a free economy and business. Although it did not immediately take off, laissez faire later became extremely influencial in international relations.')" coords="485,28,19" shape="circle">
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(35.2, '1800 AD-1850 AD: Romanticism', 'The Romantics believed in emotion as a source of how the spirit could develop. They also believe that intuition, thinking rationally, was the way to educate a child. Romantics famously incorporated their beliefs in art.')" coords="545,29,22" shape="circle">
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(38.5, '1850 AD- present: Communism', 'Communism arose after Karl Marx and Frederich Engels published the Manifesto of the Communist Party. Even before that, Socialism was an ideology that attracted many. As the Industrial Revolution created workers who suffered to gain fair rights from businesses, workers began to demand rights going far to demand Communism. Communism was influencial in the creation of the Soviet Union that lasted until 1991.')" coords="620,29,21" shape="circle">
+      <area target="_blank" alt="" title="" href="" onmouseover = "writeText(42, '1950 AD- present: Existentialism', 'Existentialism is the philosophy emphasizing individual existence as well as freedom and choice. It peaked in the 1950s in France. Philosophers questioned the purpose of life, and whether or not humans have the ability to make personal choices, or choices are predetermined.');" coords="695,29,22" shape="circle">
     </map>
-    <center><p id = "desc"></p></center>
+    <justify><p id = "date" class = "indent"></p></justify>
+    <justify><p id = "desc" style = "background-color: lightsalmon"></p></justify>
+
 
 
     <div id = "box">
@@ -100,9 +106,39 @@
           <center><input type="submit" value="Click Me!" /></center>
       </form>
 
+      <p class="bottom-three">
+        <font size="5" color = white><center>Free Economy</center><font>
+        <center><img src = "Smith.jpg"></center>
+      </p>
+      <form action="https://en.wikipedia.org/wiki/Laissez-faire">
+          <center><input type="submit" value="Click Me!" /></center>
+      </form>
 
+      <p class="bottom-three">
+        <font size="5" color = white><center>Utilitarianism</center><font>
+        <center><img src = "Mills.jpg"></center>
+      </p>
+      <form action="https://en.wikipedia.org/wiki/Utilitarianism">
+          <center><input type="submit" value="Click Me!" /></center>
+      </form>
 
-      <p><center>AAAAAAAAAAAAAAAAAAAAAAAAA</center></p>
+      <p class="bottom-three">
+        <font size="5" color = white><center>Anarchism</center><font>
+        <center><img src = "Goodwin.jpg"></center>
+      </p>
+      <form action="https://en.wikipedia.org/wiki/Anarchism">
+          <center><input type="submit" value="Click Me!" /></center>
+      </form>
+
+<p class="bottom-three">
+        <font size="5" color = white><center>Transcendentalism</center><font>
+        <center><img src = "Thoreau.jpg"></center>
+      </p>
+      <form action="https://en.wikipedia.org/wiki/Transcendentalism">
+          <center><input type="submit" value="Click Me!" /></center>
+      </form>
+
+      <p><center></center></p>
     </div>
 
 
