@@ -89,6 +89,41 @@
 
 
 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Ester's Project</title>
+</head>
+<body>
+  <p>Comments:</div>
+  <div id="outputtext0">_________________</div>
+  <div id="outputtext1">_________________</div>
+  <div id="outputtext2">_________________</div>
+  <div id="outputtext3">_________________</div>
+  <div id="outputtext4">_________________</div>
+  <div id="outputtext5">_________________</div>
+  <div id="outputtext6">_________________</div>
+  <div id="outputtext7">_________________</div>
+  <div id="outputtext8">_________________</div>
+  <div id="outputtext9">_________________</div>
+  <textarea rows="4" cols="40" name="comment" form="usrform" id="estercommentbox">test</textarea>
+  <button onclick="myFunction()">Submit</button>
+  <script>
+    function myFunction() {
+        var commentBox = document.getElementById("estercommentbox");
+      for (let i = 0; i < 9; i++) {
+        // each line gets the stuff on the previous line, creating the illusion that the cmments are moving up
+        var currLine = document.getElementById("outputtext"+i);
+        let iNext = i + 1;
+        var prevLine = document.getElementById("outputtext"+iNext);
+        currLine.innerHTML = prevLine.innerHTML
+      }
+        var lastLine = document.getElementById("outputtext9");
+      lastLine.innerHTML = commentBox.value;
+      commentBox.value = "";
+    }
+  </script>
+
 </body>
 
 
