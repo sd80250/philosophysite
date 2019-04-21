@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Discussion Board</title>
+		</head>
+		<body>
+			<h1>Opinion: <input style = "text-align: right" type = "submit" onclick = "post();" value = "Post"></h1><p></p> 
+			<div id = "opinionarea">
+				<!-- the text area-->
+				<textarea name="opinion" id="opinion" style="width:50%;height:100px;padding:2%;font-size:1.2em;border:12px ridge #6DB72C;">I think that...</textarea>
+				<p></p>
+
+				<!--the two buttons-->
+				<input type="submit" onclick="showArgumentTextArea(1);" value="Support with Argument">
+			</div>
+			<script>
+				function showArgumentTextArea(int) {
+					if (int == 1) {
+						document.getElementById("opinionarea").innerHTML = 
+							//the text area becomes uneditable
+							"<p style = 'font-size:2.0em'>" + document.getElementById("opinion").value + "</p><p></p>" +
+
+							//factsarea div forms
+							"<div id = 'factsarea" + int + "'><h2>Argument " + int + ":" +
+
+							//support with facts button appears
+							'<input style = "text-align: right" type = "submit" onclick = "supportWithFacts(' + int + ');" value = "Support with Facts"></h2><p></p>'+
+
+							//div closes
+							"</div>" +
+
+							//another opinionarea div forms
+							"<div id='opinionarea" + int + "'>" +
+
+							//another text box appears
+							'<textarea name="argument' + int + '"  id="argument' + int + '" style="width:33%;height:100px;padding:2%;font-size:1.0em;border:8px ridge black;">because...</textarea><p></p>' +
+
+							//two more buttons appear
+							'<input type="submit" onclick="showArgumentTextArea('+ (int+1) + ');" value="Support with another Argument">' +
+
+							// div closes
+							"</div>"
+
+
+					} else {
+						document.getElementById("opinionarea" + (int-1)).innerHTML = 
+							//the text area becomes uneditable
+							"<p style = 'font-size:1.5em'>" + document.getElementById("argument" + (int-1)).value + "</p><p></p>" +
+							//factsarea div forms
+							"<div id = 'factsarea" + int + ",0'><h2>Argument "+ int + ":" +
+
+							//support with facts button appears
+							'<input style = "text-align: right" type = "submit" onclick = "supportWithFacts(' + int + ', 0);" value = "Support with Facts"></h2><p></p>'+
+
+							//div closes
+							"</div>" +
+
+							//another opinionarea div forms
+							"<div id='opinionarea" + int + "'>" +
+
+							//another text box appears
+							'<textarea name="argument' + int + '"  id="argument' + int + '" style="width:33%;height:100px;padding:2%;font-size:1.0em;border:8px ridge black;">because...</textarea><p></p>' +
+
+							//two more buttons appear
+							'<input type="submit" onclick="showArgumentTextArea('+ (int+1) + ');" value="Support with another Argument">' +
+
+							// div closes
+							"</div>"
+					}
+				}
+				function post() {
+
+				}
+				
+			</script>
+		</body>
+	</html>
